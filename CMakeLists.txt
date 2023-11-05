@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.22)
 project(monitor)
 
 set(CURSES_NEED_NCURSES TRUE)
@@ -14,3 +14,6 @@ set_property(TARGET monitor PROPERTY CXX_STANDARD 17)
 target_link_libraries(monitor ${CURSES_LIBRARIES})
 # TODO: Run -Werror in CI.
 target_compile_options(monitor PRIVATE -Wall -Wextra)
+
+#add folder for unit tests
+add_subdirectory("tests")
